@@ -62,7 +62,15 @@ function displayQuestion(i) {
     document.getElementById("answer3").innerText = answers[2];
     document.getElementById("answer4").innerText = answers[3];
 
-    checkAnswer();
+    // Clear existing event listeners before adding a new ones
+    document.querySelectorAll(".answer").forEach(btn => {
+        let newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+    });
+
+    document.querySelectorAll(".answer").forEach(function(btn) {
+        btn.addEventListener("click", checkAnswer);
+    });
 }
 
 
@@ -81,24 +89,17 @@ nextBtn.addEventListener("click", function() {
 });
 
 
-function checkAnswer() {
-    let answerBtn = document.getElementsByClassName(".answer")
-    let answersGiven = answerBtn.innerText;
+function checkAnswer(event) {
+    let selectedAnswer = event.target.innerText;
     let correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
-    let options = quizQuestions[currentQuestionIndex].options;
 
-
-    
-    answersGiven.forEach(function(answerBtn) {
-        answerBtn.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === correctAnswer) {
-                console.log("correct");
-            } else {
-                console.log(answersGiven);
-            }
-        });
-    });
+    if (selectedAnswer === correctAnswer) {
+        console.log("correct");
+    } else {
+        console.log("wrong");
+    }
 }
+
 
 
 
