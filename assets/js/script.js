@@ -4,7 +4,7 @@ const startBtn = document.getElementById("start-game");
 const questionBox = document.getElementById("question-box");
 const instructions = document.getElementById("instructions")
 const nextBtn = document.getElementById("next")
-let answerBtn = document.getElementsByClassName(".answer")
+
 
 //Questions Array
 const quizQuestions = [
@@ -49,7 +49,7 @@ function startGame () {
     instructions.classList.add("hiden");
     questionBox.classList.remove("hiden");
     nextBtn.classList.remove("hiden");
-    displayQuestion(0);
+    displayQuestion(currentQuestionIndex);
 }
 
 function displayQuestion(i) {
@@ -82,19 +82,22 @@ nextBtn.addEventListener("click", function() {
 
 
 function checkAnswer() {
-    let answersGiven = document.querySelectorAll(".answer");
+    let answerBtn = document.getElementsByClassName(".answer")
+    let answersGiven = answerBtn.innerText;
     let correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
     let options = quizQuestions[currentQuestionIndex].options;
+
+
     
-    for (let option of options) {
+    answersGiven.forEach(function(answerBtn) {
         answerBtn.addEventListener("click", function() {
-        if (this.getAttribute("data-type").innerText === correctAnswer {
-            console.log("correct")
-        } else {
-            console.log("wrong")
-        }
+            if (this.getAttribute("data-type") === correctAnswer) {
+                console.log("correct");
+            } else {
+                console.log(answersGiven);
+            }
+        });
     });
-    }
 }
 
 
