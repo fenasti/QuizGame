@@ -9,16 +9,26 @@
 <body>
     <h1 id="heading">Capitals of the world</h1>
     <div id="quiz-area">
-        <p id="instructions">Instructions</p>
-        <div class="question-box" class="flex">
-            <div id="question">Question</div>
+        <div id="instructions">
+            <h2>Instructions</h2>
+            <br>
+            <ul>
+                <li>Press "Start Game!"</li>
+                <li>You have only 1 chance to answer right</li>
+                <li>Press "Next" for the next question</li>
+                <li>Your score will be shown at the end</li>
+            </ul>
+            <br>
+        </div>
+        <div class="question-box hidden" class="flex">
+            <div id="question"><h2>Question</h2></div>
             <button class="btn answer" id="answer1">1asdasd</button>
             <button class="btn answer" id="answer2">2asdasd</button>
             <button class="btn answer" id="answer3">3asdasd</button>
             <button class="btn answer" id="answer4">4asdasd</button>
         </div>
-            <button id="start-game">Start Game!</button>
-            <button id="next">Next</button>
+            <button id="start-game" class="btn">Start Game!</button>
+            <button id="next" class="hidden">Next</button>
     </div>
 
     <script src="assets/js/script.js"></script>

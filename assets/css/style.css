@@ -18,12 +18,20 @@ body {
     font-weight: 500;
 }
 
+ul {
+    list-style: none;
+}
+
 #heading {
     padding: 3%;
     font-family: "Ga Maamli", sans-serif;
     font-size: 5rem;
     color: antiquewhite;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#instructions {
+    font-size: xx-large;
 }
 
 /* https://stackoverflow.com/questions/2570972/css-font-border */
@@ -36,6 +44,10 @@ body {
     
 }
 
+.hidden {
+    display: none;
+}
+
 .btn {
     background-color: antiquewhite;
     border-radius: 5px;
@@ -43,7 +55,20 @@ body {
     margin: 5px;
     color: rgb(0, 0, 0);
     font-family: "Arsenal SC", sans-serif;
+}
 
+#start-game {
+    font-size: 2rem;
+}
+
+#start-game:hover {
+    background-color: rgb(28, 120, 9);
+    color: antiquewhite;
+}
+
+.btn:hover {
+    background-color: grey;
+    color: antiquewhite;
 }
 
 #quiz-area {
