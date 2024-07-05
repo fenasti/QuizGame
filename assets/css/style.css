@@ -44,9 +44,10 @@ ul {
     
 }
 
-.hidden {
+.hiden {
     display: none;
 }
+
 
 .btn {
     background-color: antiquewhite;
@@ -57,7 +58,7 @@ ul {
     font-family: "Arsenal SC", sans-serif;
 }
 
-#start-game {
+#start-game, #next {
     font-size: 2rem;
 }
 
