@@ -81,14 +81,12 @@ let currentQuestionIndex = 0;
 
 nextBtn.addEventListener("click", function() {
     currentQuestionIndex++;
-    document.querySelectorAll(".answer").forEach(btn => {
-        btn.classList.remove("correct", "wrong");
-    });
     if (currentQuestionIndex < quizQuestions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
         alert("You've completed the quiz!");
-    }
+    };
+    resetBtn();
 });
 
 
@@ -97,16 +95,20 @@ function checkAnswer(event) {
     let correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
 
     if (selectedAnswer === correctAnswer) {
-        event.target.classList.remove("btn")
-        event.target.classList.add("correct")
+        event.target.classList.remove("btn");
+        event.target.classList.add("correct");
     } else {
-        event.target.classList.remove("btn")
-        event.target.classList.add("wrong")
-    }
-
+        event.target.classList.remove("btn");
+        event.target.classList.add("wrong");
+    };
 }
 
-
+function resetBtn() {
+    document.querySelectorAll(".answer").forEach(btn => {
+        btn.classList.remove("correct", "wrong");
+        btn.classList.add("btn");
+    });
+}
 
 
 
