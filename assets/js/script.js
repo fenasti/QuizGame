@@ -94,7 +94,8 @@ function checkAnswer(event) {
     let correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
 
     if (selectedAnswer === correctAnswer) {
-        console.log("correct");
+        event.target.classList.remove("btn")
+        event.target.classList.add("correct")
     } else {
         console.log("wrong");
     }
