@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: aqua;
+    background-image: url("../images/world-map.jpeg");
+    background-size: cover;
+    text-align: center;
+}
+
+#heading {
+    padding: 3%;
+    font-family: "Ga Maamli", sans-serif;
+    font-size: 5rem;
+    color: antiquewhite;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.  flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#quiz-area {
+    background-color: rgb(66, 119, 176);
+    border-radius: 10px;
+    width: 80%;
+    
+    height: 65vh;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;    
 }
