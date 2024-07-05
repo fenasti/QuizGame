@@ -5,19 +5,27 @@ const questionBox = document.getElementById("question-box");
 const instructions = document.getElementById("instructions")
 const nextBtn = document.getElementById("next")
 
-startBtn.addEventListener("click", startGame)
+startBtn.addEventListener("click", startGame,)
 
 function startGame () {
     startBtn.classList.add("hiden");
     instructions.classList.add("hiden");
     questionBox.classList.remove("hiden");
     nextBtn.classList.remove("hiden");
-    displayQuestion()
+    displayQuestion(0)
 }
 
-function displayQuestion() {
-    let question = quizQuestions[0].country;
-    console.log(question)
+
+
+function displayQuestion(i) {
+    let question = quizQuestions[i].country;
+    let answers = quizQuestions[i].options;
+
+    document.getElementById("question").innerText = question;
+    document.getElementById("answer1").innerText = answers[0];
+    document.getElementById("answer2").innerText = answers[1];
+    document.getElementById("answer3").innerText = answers[2];
+    document.getElementById("answer4").innerText = answers[3];
 }
 
 const quizQuestions = [
