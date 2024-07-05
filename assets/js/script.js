@@ -4,8 +4,9 @@ const startBtn = document.getElementById("start-game");
 const questionBox = document.getElementById("question-box");
 const instructions = document.getElementById("instructions")
 const nextBtn = document.getElementById("next")
+let answerBtn = document.getElementsByClassName(".answer")
 
-startBtn.addEventListener("click", startGame,)
+startBtn.addEventListener("click", startGame)
 
 //Replace the instruction box with the first element of questions
 function startGame () {
@@ -25,7 +26,11 @@ function displayQuestion(i) {
     document.getElementById("answer2").innerText = answers[1];
     document.getElementById("answer3").innerText = answers[2];
     document.getElementById("answer4").innerText = answers[3];
+
+    checkAnswer();
 }
+
+
 
 //iterate thru all the questions element
 
@@ -39,6 +44,22 @@ nextBtn.addEventListener("click", function() {
         alert("You've completed the quiz!");
     }
 });
+
+
+function checkAnswer() {
+    let answersGiven = document.querySelectorAll(".answer");
+    let correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+    
+    answersGiven.forEach(function(answer) {
+        answer.addEventListener("click", function() {
+            if (answersGiven === correctAnswer) {
+                console.log("Correct!");
+            } else {
+                console.log("Wrong!");
+            }
+        });
+    });
+}
 
 
 const quizQuestions = [
