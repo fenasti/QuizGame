@@ -87,20 +87,41 @@ nextBtn.addEventListener("click", function() {
         alert("You've completed the quiz!");
     };
     resetBtn();
+    incrementQuestionNmr();
+    activeButton();
 });
 
 
 function checkAnswer(event) {
     let selectedAnswer = event.target.innerText;
     let correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+    
 
     if (selectedAnswer === correctAnswer) {
         event.target.classList.remove("btn");
         event.target.classList.add("correct");
+        incrementScore();
     } else {
         event.target.classList.remove("btn");
         event.target.classList.add("wrong");
     };
+    disableButtons();
+}
+
+//function to diable buttons after answering
+
+let buttons = document.getElementsByClassName("answer");
+
+function disableButtons() {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+}
+
+function activeButton() {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
 }
 
 function resetBtn() {
@@ -110,5 +131,14 @@ function resetBtn() {
     });
 }
 
+function incrementScore() {
+    let score = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++score;
+}
+
+function incrementQuestionNmr() {
+    let questionNmbr = parseInt(document.getElementById("question-nmbr").innerText);
+    document.getElementById("question-nmbr").innerText = ++questionNmbr;
+}
 
 
