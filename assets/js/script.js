@@ -81,6 +81,9 @@ let currentQuestionIndex = 0;
 
 nextBtn.addEventListener("click", function() {
     currentQuestionIndex++;
+    document.querySelectorAll(".answer").forEach(btn => {
+        btn.classList.remove("correct", "wrong");
+    });
     if (currentQuestionIndex < quizQuestions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
@@ -97,8 +100,10 @@ function checkAnswer(event) {
         event.target.classList.remove("btn")
         event.target.classList.add("correct")
     } else {
-        console.log("wrong");
+        event.target.classList.remove("btn")
+        event.target.classList.add("wrong")
     }
+
 }
 
 
