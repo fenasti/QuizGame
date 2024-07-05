@@ -7,6 +7,7 @@ const nextBtn = document.getElementById("next")
 
 startBtn.addEventListener("click", startGame,)
 
+//Replace the instruction box with the first element of questions
 function startGame () {
     startBtn.classList.add("hiden");
     instructions.classList.add("hiden");
@@ -14,8 +15,6 @@ function startGame () {
     nextBtn.classList.remove("hiden");
     displayQuestion(0)
 }
-
-
 
 function displayQuestion(i) {
     let question = quizQuestions[i].country;
@@ -27,6 +26,20 @@ function displayQuestion(i) {
     document.getElementById("answer3").innerText = answers[2];
     document.getElementById("answer4").innerText = answers[3];
 }
+
+//iterate thru all the questions element
+
+let currentQuestionIndex = 0;
+
+nextBtn.addEventListener("click", function() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizQuestions.length) {
+        displayQuestion(currentQuestionIndex);
+    } else {
+        alert("You've completed the quiz!");
+    }
+});
+
 
 const quizQuestions = [
     {

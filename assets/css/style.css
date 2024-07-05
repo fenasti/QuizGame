@@ -34,6 +34,10 @@ ul {
     font-size: xx-large;
 }
 
+#question {
+    font-size: xxx-large;
+}
+
 /* https://stackoverflow.com/questions/2570972/css-font-border */
 
 .flex {
@@ -56,6 +60,7 @@ ul {
     margin: 5px;
     color: rgb(0, 0, 0);
     font-family: "Arsenal SC", sans-serif;
+    font-size: 1.5rem;
 }
 
 #start-game, #next {
