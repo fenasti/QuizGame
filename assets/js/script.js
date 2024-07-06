@@ -52,6 +52,8 @@ function startGame () {
     displayQuestion(currentQuestionIndex);
 }
 
+//Access to the questions and display them
+
 function displayQuestion(i) {
     let question = quizQuestions[i].country;
     let answers = quizQuestions[i].options;
@@ -73,8 +75,6 @@ function displayQuestion(i) {
     });
 }
 
-
-
 //iterate thru all the questions element
 
 let currentQuestionIndex = 0;
@@ -85,6 +85,11 @@ nextBtn.addEventListener("click", function() {
         displayQuestion(currentQuestionIndex);
     } else {
         alert("You've completed the quiz!");
+        nextBtn.classList.add("hiden");
+        startBtn.classList.remove("hiden");
+        startBtn.innerText = "Restart!"
+        currentQuestionIndex = 0;
+        resetGame()
     };
     resetBtn();
     incrementQuestionNmr();
@@ -124,6 +129,8 @@ function activeButton() {
     }
 }
 
+//returns the buttons to their initial mode
+
 function resetBtn() {
     document.querySelectorAll(".answer").forEach(btn => {
         btn.classList.remove("correct", "wrong");
@@ -131,14 +138,25 @@ function resetBtn() {
     });
 }
 
+//Scores and reset numbers
+
+let score = 0;
+
 function incrementScore() {
-    let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
 }
 
+let questionNmbr = 1;
+
 function incrementQuestionNmr() {
-    let questionNmbr = parseInt(document.getElementById("question-nmbr").innerText);
     document.getElementById("question-nmbr").innerText = ++questionNmbr;
+}
+
+function resetGame() {
+    questionNmbr = 0;
+    score = 0;
+    document.getElementById("score").innerText = score;
+    document.getElementById("question-nmbr").innerText = questionNmbr;
 }
 
 
