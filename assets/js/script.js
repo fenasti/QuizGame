@@ -1,9 +1,8 @@
-//Start the game hidden the instruction box and displaying the questions
 
 const startBtn = document.getElementById("start-game");
 const questionBox = document.getElementById("question-box");
-const instructions = document.getElementById("instructions")
-const nextBtn = document.getElementById("next")
+const instructions = document.getElementById("instructions");
+const nextBtn = document.getElementById("next");
 
 
 //Questions Array
@@ -41,7 +40,7 @@ const quizQuestions = [
 ];
 
 
-startBtn.addEventListener("click", startGame)
+startBtn.addEventListener("click", startGame);
 
 //Replace the instruction box with the first element of questions
 function startGame () {
@@ -91,11 +90,11 @@ nextBtn.addEventListener("click", function() {
           });
         nextBtn.classList.add("hiden");
         startBtn.classList.remove("hiden");
-        startBtn.innerText = "Restart!"
+        startBtn.innerText = "Restart!";
         currentQuestionIndex = 0;
-        resetGame()
+        resetGame();
 
-    };
+    }
     resetBtn();
     incrementQuestionNmr();
     activeButton();
@@ -114,7 +113,7 @@ function checkAnswer(event) {
     } else {
         event.target.classList.remove("btn");
         event.target.classList.add("wrong");
-    };
+    }
     disableButtons();
 }
 
