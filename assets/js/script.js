@@ -86,7 +86,7 @@ nextBtn.addEventListener("click", function() {
     } else {
         Swal.fire({
             title: "Good job!",
-            text: `You've completed the quiz! Your score is ${score}`,
+            text: `You've completed the quiz! Your score is ${score} of 6`,
             icon: "success"
           });
         nextBtn.classList.add("hiden");

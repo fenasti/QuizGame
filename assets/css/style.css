@@ -79,10 +79,11 @@ header {
     min-width: auto;
     background-color: rgb(156, 80, 26);
     padding: 1%;
+    box-shadow: 5px 5px;
 }
 
 #question-size {
-    font-size: small;
+    font-size: x-small;
 }
 
 #quiz-area {
