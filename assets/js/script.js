@@ -151,6 +151,7 @@ let score = 0;
 
 function incrementScore() {
     document.getElementById("score").innerText = ++score;
+    return score;
 }
 
 let questionNmbr = 1;
@@ -166,8 +167,6 @@ function resetGame() {
     document.getElementById("question-nmbr").innerText = questionNmbr;
 }
 
-function getCurrentScore() {
-    return score;
-}
+
 
 
