@@ -84,12 +84,17 @@ nextBtn.addEventListener("click", function() {
     if (currentQuestionIndex < quizQuestions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
-        alert("You've completed the quiz!");
+        Swal.fire({
+            title: "Good job!",
+            text: `You've completed the quiz! Your score is ${score}`,
+            icon: "success"
+          });
         nextBtn.classList.add("hiden");
         startBtn.classList.remove("hiden");
         startBtn.innerText = "Restart!"
         currentQuestionIndex = 0;
         resetGame()
+
     };
     resetBtn();
     incrementQuestionNmr();
@@ -114,6 +119,8 @@ function checkAnswer(event) {
 }
 
 //function to diable buttons after answering
+
+//https://www.qodo.co.uk/blog/javascript-enabling-and-disabling-form-field-elements/#:~:text=HTML%20form%20elements%20have%20an,property%20to%20true%20or%20false%20.
 
 let buttons = document.getElementsByClassName("answer");
 
@@ -157,6 +164,10 @@ function resetGame() {
     score = 0;
     document.getElementById("score").innerText = score;
     document.getElementById("question-nmbr").innerText = questionNmbr;
+}
+
+function getCurrentScore() {
+    return score;
 }
 
 
