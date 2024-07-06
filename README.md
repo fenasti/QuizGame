@@ -8,128 +8,114 @@ In the site you could find questions relates to Countrys and theyr Capitals, the
 
 ## Features
 
-### Header/Navigation
+### Instructions
 
-- The Header is fixed to the Nav-bar at the top of the page. It shows the name of the business at the left with a subtitle that explains the main purpose of it and on the right the logo that is also in the favicon element.
+- The display is very straight forward, the titel and the background resemble to and old parchment or map and the start button shows green when hovered inviting to start.
 
-- The navigation has 3 main elements: Home, Gallery and Contact Us! Each one directs to a different page. Under every element there is a underline who shows in which page you are on.
+<img src="assets/readme/pc-instructions.png">
 
-- The contrast with the leaf background and the pink tones of the logo and the letters shows the "natural" aspect of the business. 
+- A quick and consice introduction of how the game works
 
-<img src="assets/readme/nav-bar.png">
+<img src="assets/readme/mobil.instructions.png">
 
-### Home
+### Score and Question Number
 
-- Here the costumer can find the main aspects of the business with an introduction and a small explanation of the service.
+- The points are shown twice during the Trivia, first there is a counter wich add 1 point for every right question and later the final score will be shown in a pop up window.
 
-- To the right are all the services that are offered.
+<img src="assets/readme/score.png">
 
-- At the bottom the is a table that shows relevant information related to the main objetives of the company that shows the commitment to the costumers.
+- To the right there is a Question Number counter who simply shows the amount of questions you had answered.
 
-- The only food image at this page is the background that repeats in every page, this shows that the core aspect is the first consideration and the catering explains by itselfs.
+### Start Game
 
-<img src="assets/readme/index.png">
+- After pressing "Start Game!" a country name is deployed and 4 options of capital citys are shown. There is only one chance to answer right, after every click the rest of the ocptions get automatically blocked.
 
-### Gallery
+<img src="assets/readme/mobil-question.png">
 
-- The gallery shows with vivid images the profesionalism that is espected in a service like this.
+### Correct and wrong answer
 
-- The images are shown at full display and are explained with alt atributes.
+- The game is responsive to both, correct and wrong answers showing with respective green or red if the selection is right.
 
-<img src="assets/readme/gallery.png">
+<img src="assets/readme/pc-right.png">
 
-### Sign Up!
+-If the answer is correct the score increases in 1, if wrong there is no penalty.
 
-- The form section is easy to acces and to fill. It invites the potential costumer to start the contact as soon as possible with an request.
+<img src="assets/readme/mobil.wrong.png">
 
-<img src="assets/readme/form.png">
+### Final Score
 
-### Footer
+- After reaching the last question a pop up window is displayed congratulating the player and giving the final score.
+<img src="assets/readme/pc-scpre2.png">
 
-- The footer is always at the bottom of the page and gives access to all the social media related to the company. Where you should be able to find the newest event.
 
-- All links open in a new tab an have logos to make the recognition easyer.
+- Also the "Next" button is replaced for a "Restart" givin the chance to play again as many times the user wants.
 
-<img src="assets/readme/social-bar.png">
-<img src="assets/readme/social-bar2.png">
+<img src="assets/readme/mobil-score.png">
 
 ## Testing
 
-- I tested this page in the main browsers (Chrome, Opera and Safari) and in mobil devices, it shows good reaction to different screen sizes.
+- I tested this page in the main browsers (Chrome, Opera and Safari) and mobil devices, it shows good reaction to different screen sizes.
 
-- The navigation and links are fully functional.
-
-- I confirmed that the form page is responsive and post the information succesfully.
+- All buttons are fully functional.
 
 ## Validation
 
 ### HTML
 
-- I tested all 3 pages of html in the validator and besides some syntax errors that were easly solved it passed all of them.
+- I tested the html code in the validator and besides some syntax errors that were easly solved it passed all of them.
 
-<img src="assets/readme/problem-solving2.png">
-
-- By changing the span element to a div one it solved the error
-
-<img src="assets/readme/html-valid.png">
+<img src="assets/readme/html-validator.png">
 
 ### CSS
 
- - I tested the CSS code in the validator and passed correctly after solving syntax errors.
+ - I tested the CSS code in the validator and passed correctly after deleting some unused values.
 
- <img src="assets/readme/sinxt-erros.png">
- <img src="assets/readme/css-valid.png">
+ <img src="assets/readme/css-validator.png">
+
+ ### JavaScript
+
+ - I tested the JS code in the validator and showed no error besides some missing semicolons.
+
+<img src=" assets/readme/pc-scpre2.png">
 
 ## Solve problems
 
- During the pages creation i had a problem because of the size of the background an its position wich didn`t allowed scrolling down and the footer didn't stayed at the bottom.
+One of the main problems I had during the project was how to check the array of ojects for the right answer, comparing the option selected and the correct answer option storage in the variable, after many hours i could figure thru many tutorials, that first i should target the event of clicking the selected button and with this event create the function.
 
- <img src="assets/readme/problems-solving.png">
+Other problem that was related was calling the funtion "checkAnswer" after the click of the selected option because after the first question, the array didn't advance as it clogged.
 
- I contacted student support and they helped me to figured it out by using the devtools and looking for the positions values.
-
- <img src="assets/readme/problem-solving3.png">
-
- Finally i figured it out by changing the value of the background and adding other to the footer.
-
- ## Unsolved Bugs
-
- I couldn't properly center the elements in the pages. There were always a tiny difference between the paddings from the left and right and wasn't able to fix it after long time trying.  
+source: https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
+https://www.javascripttutorial.net/javascript-dom/javascript-clonenode/
 
  ## Deployment
  
  The site was deployed to GitHub in the Deployment section, then in the Settings and the Pages section at the left.
  I selected the Main Branch, Root folder and save it, then automatically creates the deployer on top.
 
- link: https://fenasti.github.io/Catering/index.html
+ link: https://fenasti.github.io/QuizGame/
 
 ## Credit
 
-### Content
+-I took information mainly from 2 tutorials in youtube:
+https://www.youtube.com/watch?v=riDzcEQbX6k&t=645s
+https://www.youtube.com/watch?v=PBcqGxrr9g8
 
-- Love Running Project
+-Also took inspiration from the quiz Project of a student from CodeInsitute, most about inspiration in what atributtes add to my project:
+https://kera-cudmore.github.io/TheQuizArms/
 
-Whit reference on how to make a responsive gallery and syntax elements.
+-And in this blog on how to disable the buttons after selection:
+https://www.qodo.co.uk/blog/javascript-enabling-and-disabling-form-field-elements/#:~:text=HTML%20form%20elements%20have%20an,property%20to%20true%20or%20false%20.
 
-- Coders Coffeehouse Project
+## Atributes for the future
 
-As a reference for a form.
-
-- Tutorial point https://www.tutorialspoint.com/how-to-change-the-color-of-an-image-to-black-and-white-using-css#:~:text=%22grayscale%22%20filter%20is%20a%20most,be%20fully%20black%20and%20white
-
-Showed me how to make an image element darker in the black and white scale.
+I would like to add:
+-A form with an option to introduce your name so at the end the score will be displayed personalized.
+-A way to randomize the options order.
+-More option games related to the same topic, like flags, questions, etc.
 
 ### Media
 
-- https://www.pexels.com/es-es/
+- https://sweetalert2.github.io/#download
 
-Photo from Mat Brown: https://www.pexels.com/es-es/foto/foto-cerrada-de-copas-de-vino-1395966/
-
-Photo from Thallen Merlin: https://www.pexels.com/es-es/foto/juego-de-comedor-fino-en-mesa-1580622/
-
-Photo from ELEVATE: https://www.pexels.com/es-es/foto/chef-preparando-plato-de-verduras-en-losa-de-arbol-1267320/
-
-Photo from Elle Hughes: https://www.pexels.com/es-es/foto/hombre-y-mujer-vistiendo-delantales-de-rayas-blanco-y-negro-2696064/
-
-- https://fontawesome.com/
+- https://favicon.io/
 
