@@ -76,7 +76,7 @@ In the site you could find questions relates to Countrys and theyr Capitals, the
 
  - I tested the JS code in the validator and showed no error besides some missing semicolons.
 
-<img src=" assets/readme/pc-scpre2.png">
+<img src="assets/readme/js-validator.png">
 
 ## Solve problems
 
